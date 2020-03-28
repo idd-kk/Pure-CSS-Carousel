@@ -1,0 +1,114 @@
+body {
+    background-color: black;
+}
+
+/* Carousel */
+.card {
+    background-color: #dff1ed;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin: 3rem 0;
+    width: 52rem;
+    height: auto;
+    display: grid;
+    grid-template-columns: 30rem 20rem;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "caro info";
+}
+
+.carousel {
+    grid-area: caro;
+    display: inline-block;
+}
+
+.card-info {
+    grid-area: info;
+    padding: 1rem;
+}
+
+.slides {
+    display: inline-block;
+    height: auto;
+    width: 30rem;
+}
+    ul.slides {
+        display: inline-block;
+        height: auto;
+        width: 30rem;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        list-style: none;
+    }
+        ul.slides input {
+            display: none; 
+        }
+
+.slide-container { 
+    position: relative;
+}
+
+.slide-image {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    margin: auto;
+}   
+    .slide-image img {
+        width: 30rem;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 800;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+        "prev next";
+    font-size: 5em;
+    line-height: 10rem;
+    color: #fff;
+}
+    .carousel-controls label {
+        /* display: none; */
+        padding: 15rem 0;
+        margin: auto;
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+.prev-slide {
+    grid-area: prev;
+    width: 100%;
+    text-align: left;
+    left: 0;
+}
+
+.next-slide {
+    grid-area: next;
+    width: 100%;
+    text-align: right;
+    right: 0;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block; 
+}
