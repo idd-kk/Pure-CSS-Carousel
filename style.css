@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    font-size: 1em;
 }
 
 /* Carousel */
@@ -27,15 +28,25 @@ body {
     padding: 1rem;
 }
 
+body {
+    background-color: black;
+}
+
 .slides {
+    position: relative;
+    top: 0;
+    left: 0;
     display: inline-block;
-    height: auto;
-    width: 30rem;
+    height: 90vw;
+    width: 60vw;
 }
     ul.slides {
+        position: absolute;
+        top: 0;
+        left: 0;
         display: inline-block;
-        height: auto;
-        width: 30rem;
+        height: 90vw;
+        width: 60vw;
         margin: 0;
         padding: 0;
         overflow: hidden;
@@ -56,11 +67,11 @@ body {
     left: 0;
     z-index: 100;
     opacity: 0;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     margin: auto;
 }   
     .slide-image img {
-        width: 30rem;
+        width: 60vw;
         height: auto;
         position: absolute;
         top: 0;
@@ -78,12 +89,12 @@ body {
     grid-template-rows: 100%;
     grid-template-areas: 
         "prev next";
-    font-size: 5em;
-    line-height: 10rem;
+    font-size: 10em;
+    line-height: 30rem;
     color: #fff;
 }
     .carousel-controls label {
-        /* display: none; */
+        display: none;
         padding: 15rem 0;
         margin: auto;
         opacity: 0.5;
@@ -112,3 +123,4 @@ input:checked + .slide-container .slide-image {
 input:checked + .slide-container .carousel-controls label {
      display: block; 
 }
+
