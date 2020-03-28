@@ -4,23 +4,29 @@ body {
 }
 
 /* Carousel */
+button {
+    background-color: aquamarine;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
 .card {
-    background-color: #dff1ed;
-    border-radius: 1.5rem;
-    padding: 1rem;
-    margin: 3rem 0;
-    width: 52rem;
-    height: auto;
     display: grid;
-    grid-template-columns: 30rem 20rem;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
         "caro info";
+    
+    height: auto;
+    width: 80%;
+    background-color: #dff1ed;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 3rem auto;
 }
 
 .carousel {
     grid-area: caro;
-    display: inline-block;
 }
 
 .card-info {
@@ -28,74 +34,56 @@ body {
     padding: 1rem;
 }
 
-body {
-    background-color: black;
+.slides {
+    display: grid;
 }
 
-.slides {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    height: 90vw;
-    width: 60vw;
+ul.slides {
+    /* overflow: hidden; */
+    list-style: none;
+    display: grid;
 }
-    ul.slides {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: inline-block;
-        height: 90vw;
-        width: 60vw;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        list-style: none;
+    ul.slides input {
+        display: none; 
     }
-        ul.slides input {
-            display: none; 
-        }
 
 .slide-container { 
     position: relative;
 }
 
 .slide-image {
-    display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
     opacity: 0;
     transition: all .3s ease-in-out;
-    margin: auto;
 }   
     .slide-image img {
-        width: 60vw;
-        height: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
+        object-fit: fill;
     }
 
 .carousel-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "prev next";
+
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 800;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100%;
-    grid-template-areas: 
-        "prev next";
+    
+    
     font-size: 10em;
     line-height: 30rem;
     color: #fff;
 }
     .carousel-controls label {
-        display: none;
-        padding: 15rem 0;
+        /* display: none; */
+        height: 100%;
         margin: auto;
         opacity: 0.5;
         cursor: pointer;
@@ -103,6 +91,7 @@ body {
 
 .prev-slide {
     grid-area: prev;
+
     width: 100%;
     text-align: left;
     left: 0;
@@ -110,6 +99,7 @@ body {
 
 .next-slide {
     grid-area: next;
+
     width: 100%;
     text-align: right;
     right: 0;
