@@ -25,92 +25,32 @@ button {
     margin: 3rem auto;
 }
 
-.carousel {
-    grid-area: caro;
-}
-
 .card-info {
     grid-area: info;
     padding: 1rem;
 }
 
-.slides {
-    display: grid;
-}
+.carousel {
+    grid-area: caro;
 
-ul.slides {
-    /* overflow: hidden; */
-    list-style: none;
-    display: grid;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    align-items: center;
 }
-    ul.slides input {
-        display: none; 
-    }
 
 .slide-container { 
-    position: relative;
+    flex-shrink: 0; 
+    width: 60vw;
+    scroll-snap-align: start;
+    overflow: hidden;
 }
 
-.slide-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    opacity: 0;
-    transition: all .3s ease-in-out;
-}   
-    .slide-image img {
-        object-fit: fill;
-    }
-
-.carousel-controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "prev next";
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 200;
-    
-    
-    font-size: 10em;
-    line-height: 30rem;
-    color: #fff;
-}
-    .carousel-controls label {
-        display: none;
-        height: 100%;
-        margin: auto;
-        opacity: 0.5;
-        cursor: pointer;
-    }
-
-.prev-slide {
-    grid-area: prev;
-
-    width: 100%;
-    text-align: left;
-    left: 0;
+.slide-image img {
+    vertical-align: middle;
+    object-fit: contain;
+    height: 80%;
+    width: 80%;
 }
 
-.next-slide {
-    grid-area: next;
-
-    width: 100%;
-    text-align: right;
-    right: 0;
-}
-
-input:checked + .slide-container .slide-image {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
-input:checked + .slide-container .carousel-controls label {
-     display: block; 
-}
 
