@@ -39,7 +39,7 @@ button {
     align-items: center;
 }
 
-.slide-container { 
+.slide { 
     flex-shrink: 0; 
     width: 60vw;
     scroll-snap-align: start;
